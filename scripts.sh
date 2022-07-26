@@ -6,4 +6,4 @@ kind load docker-image node-hash
 kubectl apply -f ./kubernetes/manifest.yaml
 kubectl logs deploy/node-hash
 kubectl port-forward service/node-hash 9000:80
-kubectl delete -f ./kubernetes/manifest.yaml
+kubectl delete -f ./kubernetes/
