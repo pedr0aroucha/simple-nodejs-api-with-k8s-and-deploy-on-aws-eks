@@ -17,13 +17,13 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: PORT
-              value: "3000"
+              value: "80"
           resources:
             limits:
               memory: "64Mi"
               cpu: "128m"
           ports:
-            - containerPort: 3000
+            - containerPort: 80
               name: http
 
 ---
@@ -36,4 +36,4 @@ spec:
     app: node-hash
   ports:
     - port: 80
-      targetPort: http
+      targetPort: 80
