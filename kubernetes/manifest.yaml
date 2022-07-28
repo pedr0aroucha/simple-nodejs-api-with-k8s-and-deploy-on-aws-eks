@@ -13,17 +13,17 @@ spec:
     spec:
       containers:
         - name: node-hash
-          image: node-hash
+          image: pedr0aroucha/node-hash
           imagePullPolicy: IfNotPresent
           env:
             - name: PORT
-              value: "8080"
+              value: "3000"
           resources:
             limits:
               memory: "64Mi"
               cpu: "128m"
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
               name: http
 
 ---
