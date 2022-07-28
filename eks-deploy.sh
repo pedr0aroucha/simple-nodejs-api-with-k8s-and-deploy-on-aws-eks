@@ -21,3 +21,24 @@ eksctl create cluster \
     --node-type t2.micro \
     --nodes 2 
 
+
+# ----- build and public docker image
+
+docker login
+docker build -t pedr0aroucha/node-hash .
+docker run -d -p 3000:3000 pedr0aroucha/node-hash
+docker tag  pedr0aroucha/node-hash pedr0aroucha/node-hash:latest
+docker push pedr0aroucha/node-hash
+
+# ----- create kubeconfig
+
+kubectl get node
+kubectl get pods
+kubectl get services
+kubectl get deployments
+
+kubectl apply -f ./kubernetes/manifest.yaml 
+
+kubectl logs deploy/node-hash
+
+kubectl port-forward service/node-hash 9000:80
