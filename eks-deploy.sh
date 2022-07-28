@@ -11,7 +11,7 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 
-# -----create cluster
+# ----- create cluster on aws eks
 
 eksctl create cluster \
     --name eks-cluster \
@@ -31,7 +31,7 @@ docker push pedr0aroucha/node-hash
 
 # ----- create kubeconfig
 
-kubectl get node
+kubectl get nodes
 kubectl get pods
 kubectl get services
 kubectl get deployments
@@ -42,6 +42,4 @@ kubectl describe pods $(kubectl get pods | grep node-hash- | awk '{print $1}')
 kubectl describe services node-hash
 kubectl describe deployments node-hash
 
-kubectl logs deploy/node-hash
-
-kubectl port-forward service/node-hash 80:80
+kubectl logs deployment/node-hash
