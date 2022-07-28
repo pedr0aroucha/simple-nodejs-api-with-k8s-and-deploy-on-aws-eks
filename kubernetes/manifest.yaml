@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: node-hash
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: node-hash
