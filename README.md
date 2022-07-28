@@ -1,4 +1,4 @@
-obs\* These codes were developed during this class https://youtu.be/OgOqo0gOLlQ
+obs\* These codes were developed during this class https://youtu.be/OgOqo0gOLlQ and https://youtu.be/p6xDCz00TxU
 
 # Simple Node.js API for Kubernetes
 
